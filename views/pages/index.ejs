@@ -1,0 +1,27 @@
+<%-include('../partials/head.ejs')%>
+
+<body>
+    <div class="mt-4 p-5 bg-warning text-white rounded">
+        <h1><%= title %></h1>
+    </div>
+    <%-include('../partials/menu.ejs')%>
+    <div class="container">
+
+    
+    <% data.forEach((meeting) => { %> 
+        <p class="note"><img src="/images/remind.png" alt="Reminder Note">
+
+            <% if (meeting.mandatory) { %> <%
+                console.log(meeting.mandatory) %>
+                <span class="takenote">Attendance Mandatory!</span>
+   
+    <% } %>
+            <%= meeting.location %>
+            <%= meeting.dateTime %>
+            <%= meeting.topic %>
+        </p>
+        <% });%>
+</div>
+    <%-include('../partials/footer.ejs')%>
+</body>
+</html>
